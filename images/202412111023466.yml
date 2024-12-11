@@ -1,0 +1,17 @@
+version: "1.0"
+
+services:
+  xxl_job_server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: xxl-job-admin-server:2.4.2 
+    container_name: xxl_job_server
+    restart: always
+    ports:
+      - 9100:8080
+
+## 网桥声明
+networks:
+  frontend:
+    external: true
